@@ -28,4 +28,22 @@ $(document).ready(function() {
         userScore += parseInt($(this).val())
         $("#userScore").text("Your Score: " + userScore);
     });
+    // When user clicks crystal with id crystalTwo
+    $("#crystalTwo").on("click", function() {
+        alert("You've clicked crystal two.");
+        userScore += parseInt($(this).val())
+        $("#userScore").text("Your Score: " + userScore);
+    });
+    // When user clicks crystal with id crystalThree
+    $("#crystalThree").on("click", function() {
+        alert("You've clicked crystal three.");
+        userScore += parseInt($(this).val())
+        $("#userScore").text("Your Score: " + userScore);
+    });
+    // When user clicks crystal with id crystalFour
+    $("#crystalFour").on("click", function() {
+        alert("You've clicked crystal four.");
+        userScore += parseInt($(this).val())
+        $("#userScore").text("Your Score: " + userScore);
+    });
 });
