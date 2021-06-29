@@ -2,11 +2,15 @@ $(document).ready(function() {
     var crystals = ["crystalOne","crystalTwo","crystalThree","crystalFour"];
     var targetScore = (Math.floor((Math.random()*120)+19));
     var userScore = 0;
+    var wins = 0;
+    var losses = 0;
 
     // Start Game
     function initiateGame (){
         $("#targetScore").text("Target Score: " + targetScore);
         $("#userScore").text("Your Score: " + userScore);
+        $("#wins").text("Wins: " + wins);
+        $("#losses").text("Losses: " + losses);
     }
     initiateGame();
 
@@ -27,23 +31,36 @@ $(document).ready(function() {
         alert("You've clicked crystal one.");
         userScore += parseInt($(this).val())
         $("#userScore").text("Your Score: " + userScore);
+        winOrLose();
     });
     // When user clicks crystal with id crystalTwo
     $("#crystalTwo").on("click", function() {
         alert("You've clicked crystal two.");
         userScore += parseInt($(this).val())
         $("#userScore").text("Your Score: " + userScore);
+        winOrLose();
     });
     // When user clicks crystal with id crystalThree
     $("#crystalThree").on("click", function() {
         alert("You've clicked crystal three.");
         userScore += parseInt($(this).val())
         $("#userScore").text("Your Score: " + userScore);
+        winOrLose();
     });
     // When user clicks crystal with id crystalFour
     $("#crystalFour").on("click", function() {
         alert("You've clicked crystal four.");
         userScore += parseInt($(this).val())
         $("#userScore").text("Your Score: " + userScore);
+        winOrLose();
     });
+    // User Score : Target Score results in win or loss
+    function winOrLose (){
+        if (userScore === targetScore){
+            alert("YOU WIN!");
+        }
+        else if(userScore > targetScore){
+            alert("You lose :(");
+        }
+    }
 });
