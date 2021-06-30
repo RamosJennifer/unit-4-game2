@@ -13,6 +13,15 @@ $(document).ready(function() {
         $("#losses").text("Losses: " + losses);
     }
     initiateGame();
+    
+    function restartGame (){
+        targetScore = (Math.floor((Math.random()*120)+19));
+        userScore = 0;
+        $("#targetScore").text("Target Score: " + targetScore);
+        $("#userScore").text("Your Score: " + userScore);
+        $("#wins").text("Wins: " + wins);
+        $("#losses").text("Losses: " + losses);
+    }
 
     for (var i=0;i<crystals.length;i++){
         // div with individual id's
@@ -57,10 +66,14 @@ $(document).ready(function() {
     // User Score : Target Score results in win or loss
     function winOrLose (){
         if (userScore === targetScore){
-            alert("YOU WIN!");
+            wins++
+            $("#wins").text("Wins: " + wins);
+            restartGame();
         }
         else if(userScore > targetScore){
-            alert("You lose :(");
+            losses++
+            $("#losses").text("Losses: " + losses);
+            restartGame();
         }
     }
 });
