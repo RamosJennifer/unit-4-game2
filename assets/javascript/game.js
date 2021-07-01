@@ -30,12 +30,10 @@ $(document).ready(function () {
     var crystalValues = $("<img>");
     // adding an id attribute
     crystalValues.attr("id", crystals[i]);
-    console.log(crystals[i]);
     crystalValues.attr("src", "assets/images/" + crystals[i] + ".jpeg");
     $("#crystalValues").append(crystalValues);
     // adding the randomized number inside the div created above
     crystals[i] = Math.floor(Math.random() * 12 + 1);
-    console.log(crystals[i]);
   }
   $("#crystalOne").on("click", function () {
     userScore += crystals[0];
