@@ -1,0 +1,9 @@
+img {
+    height: 150px;
+    width: auto;
+    cursor: pointer;
+}
+p {
+    font-size: 12px;
+    /* text-align: center; */
+}
